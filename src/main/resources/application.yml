@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: estudiantes-reactive
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/estudiantes_db
+    username: root        # ajusta si usas otro usuario
+    password: ""          # pon tu clave si tienes
+    properties:
+      useSSL: false
+      allowPublicKeyRetrieval: true
+  main:
+    web-application-type: reactive
+
+logging:
+  level:
+    org.springframework.r2dbc: INFO
+    io.asyncer.r2dbc.mysql: WARN
